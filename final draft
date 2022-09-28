@@ -12,7 +12,17 @@ red = (255, 0, 0)
 white = (255, 255, 255)
 
 
-# work on proper fade in
+'''
+
+Function: fade_in
+Description: User inputs a color and the function will repeatedly increase the color values until it reaches the desired color
+
+Parameters: color:  
+
+Return value: N/A
+
+'''
+
 def fade_in(color, delay=0.01):
     mon = color
     start = (0, 0, 0)
@@ -29,6 +39,16 @@ def fade_in(color, delay=0.01):
 
 
 
+'''
+
+Function: sparkle
+Description: User inputs one color and the function will turn all of the pixels to that color and the second color the user inputs will be the color that randomly pops up on the board
+
+Parameters: color1 - tuple , color2- tuple, delay - float 
+
+Return value: N/A
+
+'''
 
 def sparkle(color1, color2, delay):
    np.fill(color1)
@@ -40,6 +60,16 @@ def sparkle(color1, color2, delay):
 
 
 
+'''
+
+Function: chase
+Description: User inputs 2 colors one of which will be the main color that the pixels will be set to and the second color is the one that will run around the neopixel
+
+Parameters: color1 - tuple , color2- tuple, loop - int, count - int,  delay - float   
+
+Return value: N/A
+
+'''
 
 def chase(color1, color2, loop = 20, count=3, delay=0.1):
    result = 0
@@ -77,6 +107,17 @@ def fire(background, foreground):
            np[random.randint(0, num_pixels-1)] = i_foreground
        np.show()
        time.sleep(0.06)
+
+'''
+
+Function: fade_out
+Description: Fades to black (off) from any color the neopixels are set to
+
+Parameters: color - tuple, delay - float
+
+Return value: N/A
+
+'''
 
 def fade_out(rgb, delay=0.1):
 
